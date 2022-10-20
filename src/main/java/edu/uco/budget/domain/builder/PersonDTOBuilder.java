@@ -1,5 +1,7 @@
 package edu.uco.budget.domain.builder;
 
+import edu.uco.budget.domain.PersonDTO;
+
 import java.util.UUID;
 
 public final class PersonDTOBuilder {
@@ -43,4 +45,5 @@ public final class PersonDTOBuilder {
         this.secondSurname = secondSurname;
         return this;
     }
+
 }
