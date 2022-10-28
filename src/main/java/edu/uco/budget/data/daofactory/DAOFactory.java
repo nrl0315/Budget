@@ -9,7 +9,7 @@ import static edu.uco.budget.data.enumeration.DAOFactoryType.*;
 
 public abstract class DAOFactory {
 
-    public static final DAOFactory getDAOFactory(final DAOFactoryType){
+    public static final DAOFactory getDAOFactory(final DAOFactoryType DAOFactoryType sqlserver){
 
         DAOFactory daoFactory;
 
@@ -30,7 +30,7 @@ public abstract class DAOFactory {
             case POSTGRESQL :
                 throw new RuntimeException(Messages.DAOFactory.TECHNICAL_POSTGRESQL_NOT_IMPLEMENTED);
             default:
-                throw new IllegalArgumentException("Unexpected value " + factory);
+                throw new RuntimeException(Messages.DAOFactory.TECHNICAL_UNEXPECTED_DAOFACTORY);
         }
         return daoFactory;
     }

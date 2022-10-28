@@ -1,11 +1,22 @@
 package edu.uco.budget.data.daofactory;
 
+import edu.uco.budget.crosscuting.exception.data.CrosscutingCostumException;
+import edu.uco.budget.crosscuting.exception.data.DataCustomException;
+import edu.uco.budget.crosscuting.helper.SqlConnectionHelper;
+import edu.uco.budget.crosscuting.messages.Messages;
 import edu.uco.budget.data.dao.BudgetDAO;
 import edu.uco.budget.data.dao.PersonDAO;
 import edu.uco.budget.data.dao.YearDAO;
+import edu.uco.budget.data.dao.relational.sqlserver.BudgetSqlServerDAO;
+import edu.uco.budget.data.dao.relational.sqlserver.PersonSqlServerDAO;
+import edu.uco.budget.data.dao.relational.sqlserver.YearSqlServerDAO;
 import edu.uco.budget.data.daofactory.DAOFactory;
 
+import java.sql.Connection;
+
 final class SqlServerDAOFactory extends DAOFactory {
+
+    private Connection connection;
 
     SqlServerDAOFactory(){
         openConnection();
@@ -13,12 +24,16 @@ final class SqlServerDAOFactory extends DAOFactory {
 
     @Override
     protected void openConnection() {
-
+        connection = null;
     }
 
     @Override
     public void initTransaction() {
-
+        try{
+            SqlConnectionHelper.innitTransaction(connection);
+        } catch (CrosscutingCostumException exception){
+            throw DataCustomException.createTechnicalException(Messages.SQLDAOFactory.TECHNICAL_PROBLEM_INIT_TRANSACTION);
+        }
     }
 
     @Override
@@ -38,16 +53,16 @@ final class SqlServerDAOFactory extends DAOFactory {
 
     @Override
     public BudgetDAO getBudgetDAO() {
-        return null;
+        return new BudgetSqlServerDAO(connection);
     }
 
     @Override
     public PersonDAO getPersonDAO() {
-        return null;
+        return new PersonSqlServerDAO(connection);
     }
 
     @Override
     public YearDAO getYearDAO() {
-        return null;
+        return new YearSqlServerDAO(connection);
     }
 }
