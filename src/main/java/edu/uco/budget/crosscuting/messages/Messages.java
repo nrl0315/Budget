@@ -42,4 +42,23 @@ public class Messages {
         }
         public static final String TECHNICAL_PROBLEM_INIT_TRANSACTION = "There was a problem trying to init transaction";
     }
+
+    public static class BudgetSqlServerDAO{
+        private BudgetSqlServerDAO(){
+            super();
+        }
+        public static final String TECHNICAL_PROBLEM_CREATING_BUDGET = "There was a problem when trying to create the desired budget " +
+                "in SQLServerDAOFactory with id = ";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_WHEN_CREATING_BUDGET = "There was an unknown problem when trying " +
+                "to create the budget";
+        public static final String TECHNICAL_ERROR_UPDATING_BUDGET = "There was an error when trying to update the budget with id ";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_WHEN_UPDATING_BUDGET = "There was an unknown problem when trying " +
+                "to update the budget";
+        public static final String TECHNICAL_ERROR_DELETING_BUDGET = "There was an error when trying to delete the budget";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_WHEN_TRYING_TO_DELETE = "There was an error when trying to delete the " +
+                "desired budget";
+        public static final String TECHNICAL_ERROR_SEARCHING_INTO_BUDGET = "There was an error when trying to search into budget with the id ";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_WHEN_TRYING_TO_SEARCH = "There was an error when trying to search using " +
+                "the desired budget";
+    }
 }

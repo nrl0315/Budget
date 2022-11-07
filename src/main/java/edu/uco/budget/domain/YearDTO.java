@@ -38,4 +38,8 @@ public final class YearDTO {
     public final void setYearNumber(short yearNumber) {
         this.yearNumber = isLessThan(yearNumber, ZERO) ? ZERO : yearNumber;
     }
+
+    public final String getUUIDAsString(){
+        return UUIDhelper.getUUIDAsString(getId());
+    }
 }

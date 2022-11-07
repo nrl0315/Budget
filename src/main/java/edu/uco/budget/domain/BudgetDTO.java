@@ -1,5 +1,7 @@
 package edu.uco.budget.domain;
 
+import edu.uco.budget.crosscuting.helper.UUIDhelper;
+
 import java.util.UUID;
 
 import static edu.uco.budget.crosscuting.helper.ObjectHelper.getDefault;
@@ -39,5 +41,9 @@ public final class BudgetDTO {
 
     public void setPerson(PersonDTO person) {
         this.person = getDefault(person, getPersonDTOBuilder().build());
+    }
+
+    public final String getUUIDAsString(){
+        return UUIDhelper.getUUIDAsString(getId());
     }
 }

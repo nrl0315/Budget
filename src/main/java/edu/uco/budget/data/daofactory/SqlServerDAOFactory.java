@@ -32,7 +32,7 @@ final class SqlServerDAOFactory extends DAOFactory {
         try{
             SqlConnectionHelper.innitTransaction(connection);
         } catch (CrosscutingCostumException exception){
-            throw DataCustomException.createTechnicalException(Messages.SQLDAOFactory.TECHNICAL_PROBLEM_INIT_TRANSACTION);
+            throw DataCustomException.createTechnicalException(Messages.SQLDAOFactory.TECHNICAL_PROBLEM_INIT_TRANSACTION,new Exception());
         }
     }
 
