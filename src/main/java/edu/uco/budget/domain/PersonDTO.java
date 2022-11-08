@@ -6,6 +6,7 @@ import java.util.UUID;
 
 import static edu.uco.budget.crosscuting.helper.UUIDhelper.getNewUUID;
 import static edu.uco.budget.crosscuting.helper.StringHelper.EMPTY;
+import static edu.uco.budget.crosscuting.helper.UUIDhelper.getUUIDFromString;
 
 public final class PersonDTO {
     private UUID id;
@@ -32,6 +33,16 @@ public final class PersonDTO {
         setSecondName(secondName);
         setFirstSurname(firstSurname);
         setSecondSurname(secondSurname);
+    }
+
+    public static final PersonDTO create(final UUID id, final String idCard, final String firstName, final String secondName,
+                                         final String firstSurname, final String secondSurname){
+        return new PersonDTO(id,idCard,firstName,secondName,firstSurname,secondSurname);
+    }
+
+    public static final PersonDTO create(final String id, final String idCard, final String firstName, final String secondName,
+                                         final String firstSurname, final String secondSurname){
+        return new PersonDTO(getUUIDFromString(id),idCard,firstName,secondName,firstSurname,secondSurname);
     }
 
     public final UUID getId() {

@@ -16,6 +16,10 @@ public final class PersonDTOBuilder {
         super();
     }
 
+    public static final PersonDTOBuilder getPersonDTOBuilder(){
+        return new PersonDTOBuilder();
+    }
+
     public final PersonDTOBuilder setId(final UUID id) {
         this.id = id;
         return this;

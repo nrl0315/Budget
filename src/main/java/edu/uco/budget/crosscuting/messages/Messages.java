@@ -1,5 +1,7 @@
 package edu.uco.budget.crosscuting.messages;
 
+import java.util.UUID;
+
 public class Messages {
 
     private Messages(){
@@ -60,5 +62,39 @@ public class Messages {
         public static final String TECHNICAL_ERROR_SEARCHING_INTO_BUDGET = "There was an error when trying to search into budget with the id ";
         public static final String TECHNICAL_UNEXPECTED_ERROR_WHEN_TRYING_TO_SEARCH = "There was an error when trying to search using " +
                 "the desired budget";
+        public static final String TECHNICAL_ERROR_FILLING_RESULTS = "There was an error when trying to fill the results";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_FILLING_RESULTS = "There was an unknown issue when trying to fill the results " +
+                "on the desired list";
+        public static final String TECHNICAL_ERROR_WHEN_FILLING_BUDGETDTO = "There was a problem when trying to fill BudgetDTO from resultsSet";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_FILLING_BUDGETDTO = "There was an unknown error when trying to fill the " +
+                "budgetDTO from resultsSet";
+        public static final String TECNICAL_ERROR_WHEN_FILLING_YEARDTO = "There was an error when trying to fill YearDTO from ResultsSet";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_FILLING_YEARDTO = "There was an unexpected error when trying to fill the " +
+                "yearDTO from ResultsSet";
+        public static final String TECNICAL_ERROR_WHEN_FILLING_PERSONDTO = "There was an error when trying to fill personDTO from ResultsSet";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_FILLING_PERSONDTO = "There was an unexpected error when trying to fill the " +
+                "personDTO from ResultsSet";
+        public static final String TECHNICAL_ERROR_WHEN_EXECUTING_QUERY = "There was an error when trying to execute the query";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_EXECUTING_QUERY = "There was an unknown error when trying to execute the " +
+                "query";
+        public static final String TECHNICAL_ERROR_TRYING_TO_SET_PARAMETER_VALUES = "There was an error when trying to set the parameter " +
+                "values using the query";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_TRYING_TO_SET_PARAMETER_VALUES = "There was an unknown error when trying " +
+                "to set the parameter values using the desired query";
+        public static final String TECHNICAL_PROBLEM_TRYING_TO_PREPARE_THE_QUERY_FOR_EXECUTE = "There as an error when trying to prepare " +
+                "the query to execute the desired sql information";
+        public static final String TECHNICAL_UNEXPECTED_PROBLEM_TRYING_TO_PREPARE_THE_QUERY_FOR_EXECUTE = "There was an unknown issue " +
+                "when trying to prepare the query to execute the desired sql information";
+    }
+
+    public static class UUIDHelper{
+        private UUIDHelper(){
+            super();
+        }
+
+        public static final String TECHNICAL_INVALID_STRING_TO_CREATE_UUID = "There was an error when trying to create the UUID since " +
+                "the argument do not match the format";
+        public static final String TECHNICAL_UNEXPECTED_ERROR_CREATING_UUID_FROM_STRING = "There is an unexpected problem when trying to " +
+                "convert the string to UUID ";
     }
 }
