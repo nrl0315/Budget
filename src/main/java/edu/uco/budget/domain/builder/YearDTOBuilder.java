@@ -1,5 +1,7 @@
 package edu.uco.budget.domain.builder;
 
+import edu.uco.budget.domain.YearDTO;
+
 import java.util.UUID;
 
 public final class YearDTOBuilder {
@@ -22,5 +24,9 @@ public final class YearDTOBuilder {
     public final YearDTOBuilder setYearNumber(final short yearNumber) {
         this.yearNumber = yearNumber;
         return this;
+    }
+
+    public final YearDTO build() {
+        return YearDTO.create(id, yearNumber);
     }
 }

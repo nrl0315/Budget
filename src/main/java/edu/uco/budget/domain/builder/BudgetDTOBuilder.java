@@ -1,5 +1,6 @@
 package edu.uco.budget.domain.builder;
 
+import edu.uco.budget.domain.BudgetDTO;
 import edu.uco.budget.domain.PersonDTO;
 import edu.uco.budget.domain.YearDTO;
 import java.util.UUID;
@@ -34,5 +35,9 @@ public final class BudgetDTOBuilder {
     public final BudgetDTOBuilder setYear(final YearDTO year){
         this.year = year;
         return this;
+    }
+
+    public final BudgetDTO build() {
+        return BudgetDTO.create(id,person,year);
     }
 }

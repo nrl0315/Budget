@@ -50,4 +50,9 @@ public final class PersonDTOBuilder {
         return this;
     }
 
+    public final PersonDTO build() {
+        return PersonDTO.create(id, idCard, firstName,
+                secondName, firstSurname, secondSurname);
+    }
+
 }
