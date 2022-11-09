@@ -97,4 +97,15 @@ public class Messages {
         public static final String TECHNICAL_UNEXPECTED_ERROR_CREATING_UUID_FROM_STRING = "There is an unexpected problem when trying to " +
                 "convert the string to UUID ";
     }
+
+    public static class CreateBudgetUseCaseImpl{
+        private CreateBudgetUseCaseImpl(){
+            super();
+        }
+
+        public static final String BUSINESS_PERSON_DOES_NOT_EXIST = "There was an error creating the budget since the person does not " +
+                "exist on the data base";
+        public static final String BUSINESS_BUDGET_ALREADY_EXIST = "The budget that you are trying to create already exist on our data " +
+                "base for the persona and also for the year";
+    }
 }

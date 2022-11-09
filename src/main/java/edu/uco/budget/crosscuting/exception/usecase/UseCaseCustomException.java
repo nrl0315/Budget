@@ -11,17 +11,31 @@ public class UseCaseCustomException extends BudgetCustomException {
         super(userMessage, technicalMessage,rootException , LayerException.DATA);
     }
 
+    protected UseCaseCustomException(String userMessage) {
+        super(userMessage);
+    }
 
-    public static final BudgetCustomException createUserException(final String userMessage, final String technicalMessage,
-                                                                  final Exception rootException){
-        return new UseCaseCustomException(userMessage,userMessage,new Exception());
+
+    public static final BudgetCustomException createUserException(final String userMessage){
+        return new UseCaseCustomException(userMessage);
     }
 
     public static final BudgetCustomException createTechnicalException(final String technicalMessage, final Exception exception){
         return new UseCaseCustomException(EMPTY, technicalMessage,new Exception());
     }
 
+    public static final BudgetCustomException createBusinessException(final String businessMessage, final Exception exception){
+        return new UseCaseCustomException(businessMessage, EMPTY,new Exception());
+    }
+
     public static final BudgetCustomException create(final String userMessage, final String technicalMessage, final Exception exception){
         return new UseCaseCustomException(userMessage,technicalMessage,new Exception());
+    }
+
+    public static final BudgetCustomException wrapException(final String message, final BudgetCustomException exception){
+        if(exception.isTechnicalException()){
+            return UseCaseCustomException.createBusinessException(null,exception);
+        }
+        return exception;
     }
 }

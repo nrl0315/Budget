@@ -19,6 +19,9 @@ public class BudgetCustomException extends RuntimeException{
         setLayer(layer);
     }
 
+    public BudgetCustomException(String userMessage) {
+    }
+
     private final void setUserMessage(final String userMessage){
         this.userMessage = applyTrim(userMessage);
     }
