@@ -3,8 +3,7 @@ import edu.uco.budget.crosscuting.helper.UUIDhelper;
 import java.util.*;
 import static edu.uco.budget.crosscuting.helper.NumberHelper.ZERO;
 import static edu.uco.budget.crosscuting.helper.NumberHelper.isLessThan;
-import static edu.uco.budget.crosscuting.helper.UUIDhelper.getNewUUID;
-import static edu.uco.budget.crosscuting.helper.UUIDhelper.getUUIDFromString;
+import static edu.uco.budget.crosscuting.helper.UUIDhelper.*;
 
 public final class YearDTO {
     private UUID id;
@@ -16,7 +15,7 @@ public final class YearDTO {
     }
 
     public YearDTO(){
-        setId(getNewUUID());
+        setId(getDefaultUUID(id));
         setYearNumber(ZERO);
     }
 
@@ -33,7 +32,7 @@ public final class YearDTO {
     }
 
     public final void setId(UUID id) {
-        this.id = UUIDhelper.getDefaultUUID(id);
+        this.id = getDefaultUUID(id);
     }
 
     public final short getYearNumber() {

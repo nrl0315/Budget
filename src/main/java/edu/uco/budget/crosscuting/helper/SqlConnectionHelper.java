@@ -1,6 +1,6 @@
 package edu.uco.budget.crosscuting.helper;
 
-import edu.uco.budget.crosscuting.exception.data.CrosscutingCostumException;
+import edu.uco.budget.crosscuting.exception.crosscuting.CrosscutingCostumException;
 import edu.uco.budget.crosscuting.messages.Messages;
 
 import java.sql.Connection;

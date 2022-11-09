@@ -17,7 +17,7 @@ public final class BudgetDTO {
 
 
     public BudgetDTO() {
-        setId(getNewUUID());
+        setId(getDefaultUUID(id));
         setPerson(getPersonDTOBuilder().build());
         setYear(getYearDTOBuilder().build());
     }

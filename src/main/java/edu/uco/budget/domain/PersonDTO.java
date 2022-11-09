@@ -4,9 +4,8 @@ import edu.uco.budget.crosscuting.helper.UUIDhelper;
 
 import java.util.UUID;
 
-import static edu.uco.budget.crosscuting.helper.UUIDhelper.getNewUUID;
 import static edu.uco.budget.crosscuting.helper.StringHelper.EMPTY;
-import static edu.uco.budget.crosscuting.helper.UUIDhelper.getUUIDFromString;
+import static edu.uco.budget.crosscuting.helper.UUIDhelper.*;
 
 public final class PersonDTO {
     private UUID id;
@@ -17,7 +16,7 @@ public final class PersonDTO {
     private String secondSurname;
 
     public PersonDTO() {
-        setId(getNewUUID());
+        setId(getDefaultUUID(id));
          setIdCard(EMPTY);
          setFirstName(EMPTY);
          setSecondName(EMPTY);
@@ -40,6 +39,10 @@ public final class PersonDTO {
         return new PersonDTO(id,idCard,firstName,secondName,firstSurname,secondSurname);
     }
 
+    public static final PersonDTO create(final UUID id){
+        return new PersonDTO(id,EMPTY,EMPTY,EMPTY,EMPTY,EMPTY);
+    }
+
     public static final PersonDTO create(final String id, final String idCard, final String firstName, final String secondName,
                                          final String firstSurname, final String secondSurname){
         return new PersonDTO(getUUIDFromString(id),idCard,firstName,secondName,firstSurname,secondSurname);
@@ -50,7 +53,7 @@ public final class PersonDTO {
     }
 
     public final void setId(UUID id) {
-        this.id = id;
+        this.id = getDefaultUUID(id);
     }
 
     public final String getIdCard() {
@@ -95,5 +98,13 @@ public final class PersonDTO {
 
     public final String getUUIDAsString(){
         return UUIDhelper.getUUIDAsString(getId());
+    }
+
+    public final boolean exist(){
+        return !isDefaultUUID(id);
+    }
+
+    public final boolean notExist(){
+        return !exist();
     }
 }

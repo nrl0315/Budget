@@ -1,6 +1,6 @@
 package edu.uco.budget.data.daofactory;
 
-import edu.uco.budget.crosscuting.exception.data.CrosscutingCostumException;
+import edu.uco.budget.crosscuting.exception.crosscuting.CrosscutingCostumException;
 import edu.uco.budget.crosscuting.exception.data.DataCustomException;
 import edu.uco.budget.crosscuting.helper.SqlConnectionHelper;
 import edu.uco.budget.crosscuting.messages.Messages;
@@ -10,7 +10,6 @@ import edu.uco.budget.data.dao.YearDAO;
 import edu.uco.budget.data.dao.relational.sqlserver.BudgetSqlServerDAO;
 import edu.uco.budget.data.dao.relational.sqlserver.PersonSqlServerDAO;
 import edu.uco.budget.data.dao.relational.sqlserver.YearSqlServerDAO;
-import edu.uco.budget.data.daofactory.DAOFactory;
 
 import java.sql.Connection;
 
