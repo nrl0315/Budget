@@ -32,7 +32,7 @@ public final class BudgetSqlServerDAO extends DAORelational implements BudgetDAO
 
     @Override
     public final void create(BudgetDTO budget) {
-        final var sql = "INSERT INTO Budget (id,,idYear,idPerson) VALUES (?,?,?)";
+        final var sql = "INSERT INTO Budget (id,idYear,idPerson) VALUES (?,?,?)";
 
         try(final var preparedStatement = getConnection().prepareStatement(sql)){
             preparedStatement.setString(1,budget.getUUIDAsString());
