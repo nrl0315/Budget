@@ -9,7 +9,7 @@ import static edu.uco.budget.data.enumeration.DAOFactoryType.*;
 
 public abstract class DAOFactory {
 
-    public static final DAOFactory getDAOFactory(final DAOFactoryType DAOFactoryType sqlserver){
+    public static final DAOFactory getDAOFactory(final DAOFactoryType factory){
 
         DAOFactory daoFactory;
 
